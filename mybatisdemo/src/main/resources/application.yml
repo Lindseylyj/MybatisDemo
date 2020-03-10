@@ -1,0 +1,5 @@
+#url: jdbc:mysql://10.1.49.8:3306/test_lyj
+#username: ctp
+#password: 1qaz#EDC
+#mybatis.mapper-locations: classpath*:/mapper/*.xml
+#mybatis.type-aliases-package: com.lyj.mybatisdemo.entity

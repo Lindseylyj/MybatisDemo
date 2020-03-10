@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lyj.mybatisdemo.dao.UserDao">
+    <!-- 增加-->
+    <insert id="save" parameterType="com.lyj.mybatisdemo.entity.User">
+        insert into person(
+        username,
+        age,
+        sex,
+        high,
+        weight,
+        createtime
+        )
+        values (
+        #{userName},
+        #{age},
+        #{sex},
+        #{high},
+        #{weight},
+        now()
+        )
+    </insert>
+  <!-- 查询-->
+    <select id="query" resultType="com.lyj.mybatisdemo.entity.User" >
+        select * from person where id=#{id};
+    </select>
+
+    <!--删除-->
+    <delete id="delete" parameterType="com.lyj.mybatisdemo.entity.User">
+        delete from person where id = #{id};
+    </delete>
+
+    <!--更新-->
+    <update id="update" parameterType="com.lyj.mybatisdemo.entity.User">
+        update person
+        <set>
+            username = #{userName},
+            age = #{age},
+            sex = #{sex},
+            high = #{high},
+            weight = #{weight},
+            updatetime = now()
+        </set>
+        where
+        id = #{id}
+
+    </update>
+</mapper>
